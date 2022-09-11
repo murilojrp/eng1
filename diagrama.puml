@@ -1,0 +1,37 @@
+@startuml Diagrama
+actor "Cliente" as C
+rectangle "Sistema Caixa Bancário" {
+  usecase "Inserir Cartão" as ACAO1
+  usecase "Requisitar Senha" as ACAO2
+  usecase "Fornecer Senha" as ACAO3
+  usecase "Validar Senha" as ACAO4
+  usecase "Exibir opções de operação" as ACAO5
+  usecase "Realizar saque" as ACAO6
+  usecase "Requisitar quantia a ser sacada" as ACAO7
+  usecase "Fornecer quantia a ser sacada" as ACAO8
+  usecase "Imprimir a quantia desejada e o recibo" as ACAO9
+  usecase "Retirar a quantia desejada e o recibo" as ACAO10
+  usecase "FIM" as ACAO11 
+}
+actor "Sistema" as S
+C -> ACAO1
+S -> ACAO2
+C -> ACAO3
+S -> ACAO4
+S -> ACAO5
+C -> ACAO6
+S -> ACAO7
+C -> ACAO8
+S -> ACAO9
+C -> ACAO10
+ACAO1 ..> ACAO2
+ACAO2 ..> ACAO3
+ACAO3 ..> ACAO4
+ACAO4 ..> ACAO5
+ACAO5 ..> ACAO6
+ACAO6 ..> ACAO7
+ACAO7 ..> ACAO8
+ACAO8 ..> ACAO9
+ACAO9 ..> ACAO10
+ACAO10 ..> ACAO11
+@enduml
